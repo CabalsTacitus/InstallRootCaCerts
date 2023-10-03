@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: install os deps
-      run: apt-get install clang zlib1g-dev
+      run: sudo apt-get install clang zlib1g-dev
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
@@ -25,4 +25,4 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet publish -r linux-arm64 -c Release
+      run: dotnet publish -r linux-amd64 -c Release
